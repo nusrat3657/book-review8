@@ -1,43 +1,54 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const Details = () => {
-    const book = useLoaderData()
+    const books = useLoaderData();
+    const { id } = useParams()
+    const book = books.find(book => book.id == id);
+    console.log(book);
     return (
-        <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
-            <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
-                <div className="space-y-6">
-                    <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">Suspendisse ut magna et ipsum sodales accumsan.</h1>
-                    <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-600">
-                        <div className="flex items-center md:space-x-2">
-                            <img src="https://source.unsplash.com/75x75/?portrait" alt="" className="w-4 h-4 border rounded-full dark:bg-gray-500 dark:border-gray-300" />
-                            <p className="text-sm">Leroy Jenkins • July 19th, 2021</p>
-                        </div>
-                        <p className="flex-shrink-0 mt-3 text-sm md:mt-0">4 min read • 1,570 views</p>
+
+        // <h3>show details</h3>
+
+        <div className="lg:grid grid-cols-2 gap-10 my-10">
+            <div className="bg-[#131313]/5 rounded-xl lg:h-[630px]">
+                <img className="h-[450px] lg:mt-[90px] lg:ml-36" src={book.img} alt="" />
+            </div>
+            <div>
+                <h2 className="playfair text-4xl font-bold">{book.name}</h2>
+                <p className="my-5">By: {book.author}</p>
+                <hr />
+                <p className="my-3">{book.category}</p>
+                <hr />
+                <p className="text-sm my-4"><span className="font-bold">Review: </span>{book.review}</p>
+                <div className=" my-4">
+                    <p className="flex gap-3"><span className="font-bold mt-1">Tag: </span>
+                        {
+                            book.tags.map(tag => (
+                                <p className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full ">{tag}</p>
+                            ))
+                        }
+                    </p>
+                </div>
+                <hr />
+                <div className="flex gap-6 text-sm my-5">
+                    <div className="">
+                        <p>Number of Pages: </p>
+                        <p className="my-2">Publisher: </p>
+                        <p>Year of Publishing: </p>
+                        <p className="mt-2">Rating: </p>
+
+
+                    </div>
+                    <div className="font-bold">
+                        <p>{book.totalPages}</p>
+                        <p className="my-2">{book.publisher}</p>
+                        <p>{book.yearOfPublishing}</p>
+                        <p className="mt-2">{book.rating}</p>
                     </div>
                 </div>
-                <div className="dark:text-gray-800">
-                    <p>Insert the actual text content here...</p>
-                </div>
-            </article>
-            <div>
-                <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
-                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#MambaUI</a>
-                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#TailwindCSS</a>
-                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#Angular</a>
-                </div>
-                <div className="space-y-2">
-                    <h4 className="text-lg font-semibold">Related posts</h4>
-                    <ul className="ml-4 space-y-1 list-disc">
-                        <li>
-                            <a rel="noopener noreferrer" href="#" className="hover:underline">Nunc id magna mollis</a>
-                        </li>
-                        <li>
-                            <a rel="noopener noreferrer" href="#" className="hover:underline">Duis molestie, neque eget pretium lobortis</a>
-                        </li>
-                        <li>
-                            <a rel="noopener noreferrer" href="#" className="hover:underline">Mauris nec urna volutpat, aliquam lectus sit amet</a>
-                        </li>
-                    </ul>
+                <div>
+                    <button className="btn border-2 bg-none">Read</button>
+                    <button className="btn bg-[#59C6D2] text-white font-bold ml-5">Wishlist</button>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ const Book = ({ book }) => {
     console.log(book);
     const { id, name, author, img, review, rating, category, tags } = book;
     return (
-        <Link to={`/books/${id}`} className="group transition hover:scale-105 hover:no-underline focus:no-underline lexend lg:w-[400px] bg-base-100 border-2 rounded-xl p-6">
+        <Link to={`/book/${id}`} className="group transition hover:scale-105  hover:no-underline focus:no-underline lexend lg:w-[400px] bg-base-100 border-2 rounded-xl p-6">
             <figure className="px-10 pt-10 bg-[#F3F3F3] rounded-xl h-[230px]">
                 <img src={img} alt="" className="ml-20 pb-6 -mt-2" />
             </figure>
