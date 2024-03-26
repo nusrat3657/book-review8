@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Book from "../Book/Book";
+import Read from "../Read/Read";
 
 const Books = () => {
 
@@ -18,6 +19,9 @@ const Books = () => {
             {
                 books.map(book => <Book key={book.id} book={book}></Book>)
             }
+            {/* {
+                books.map(book => <Read key={book.id} book={book}></Read>)
+            } */}
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveReadBooks } from "../utility/readLocalStorage";
+import { saveWishList } from "../utility/wishLocalStorage";
 
 
 const Details = () => {
@@ -16,7 +17,8 @@ const Details = () => {
         toast('Book added to read');
     }
     const handleWishLists = () =>{
-        toast('Book added to wishlist ')
+        saveWishList(idInt);
+        toast('Book added to wishlist ');
     }
 
     return (

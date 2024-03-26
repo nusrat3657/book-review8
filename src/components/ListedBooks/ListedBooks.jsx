@@ -6,7 +6,7 @@ import Read from "../Read/Read";
 const ListedBooks = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
-    // const book = useLoaderData();
+    const book = useLoaderData();
     // const [appliedBooks, setAppliedBooks] = useState([]);
     // const [displayBooks, setDisplayBooks] = useState([]);
 

@@ -1,12 +1,13 @@
 import { SlLocationPin } from "react-icons/sl";
 import { IoPeopleOutline } from "react-icons/io5";
 import { BsSdCard } from "react-icons/bs";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getStoredReadBooks } from "../utility/readLocalStorage";
 
 const Read = () => {
     // const book = useLoaderData();
+    // const {id} = book;
     const [appliedBooks, setAppliedBooks] = useState([]);
     const [displayBooks, setDisplayBooks] = useState([]);
 
@@ -58,7 +59,7 @@ const Read = () => {
                                 <div className='flex gap-4'>
                                     <a className="bg-[#328EFF]/15 text-[#328EFF] rounded-full px-4 pt-3">Category: {book.category}</a>
                                     <a className="bg-[#FFAC33]/15 text-[#FFAC33] rounded-full px-4 pt-3">Rating: {book.rating}</a>
-                                    <button className="bg-[#23BE0A] rounded-full px-4 py-2 text-white btn">View Details</button>
+                                    <Link to={`/book/${book.id}`}><button className="bg-[#23BE0A] rounded-full px-4 py-2 text-white btn">View Details</button></Link>
                                 </div>
                             </div>
 
