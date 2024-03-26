@@ -4,15 +4,25 @@ const Header = () => {
 
     const links = <>
         {/* <li className="px-4 py-2 rounded-lg hover:border-[#23BE0A] hover:border-2 hover:bg-[#23BE0A]"><NavLink to="/">Home</NavLink></li> */}
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/books">Listed Books</NavLink></li>
-        <li><NavLink to="/pages">Pages to Read</NavLink></li>
-        <li><NavLink to="/statistics">Statistics</NavLink></li>
-        <li><NavLink to="blog">Blog</NavLink></li>
+        <li className=""><NavLink to="/" className={({ isActive }) =>
+            isActive ? "font-bold text-[#23BE0A] border-2  rounded-lg border-[#23BE0A] " : ""
+        }>Home</NavLink></li>
+        <li><NavLink to="/books" className={({ isActive }) =>
+            isActive ? "font-bold text-[#23BE0A] border-2  rounded-lg border-[#23BE0A]" : ""
+        }>Listed Books</NavLink></li>
+        <li><NavLink to="/pages" className={({ isActive }) =>
+            isActive ? "font-bold text-[#23BE0A] border-2  rounded-lg border-[#23BE0A]" : ""
+        }>Pages to Read</NavLink></li>
+        <li><NavLink to="/statistics" className={({ isActive }) =>
+            isActive ? "font-bold text-[#23BE0A] border-2 rounded-lg border-[#23BE0A]" : ""
+        }>Statistics</NavLink></li>
+        <li><NavLink to="/contact" className={({ isActive }) =>
+            isActive ? "font-bold text-[#23BE0A] border-2  rounded-lg border-[#23BE0A]" : ""
+        }>Contact Us</NavLink></li>
     </>
 
     return (
-        <div className="navbar bg-base-100 -ml-2">
+        <div className="navbar bg-base-100 -ml-2 mt-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,7 +35,7 @@ const Header = () => {
                 <a className="btn btn-ghost lg:text-2xl font-bold">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className=" menu menu-horizontal px-1">
+                <ul className="mt-2 menu menu-horizontal px-1 ">
                     {links}
                 </ul>
             </div>
