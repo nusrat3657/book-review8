@@ -1,63 +1,56 @@
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import { SlLocationPin } from "react-icons/sl";
-import { IoPeopleOutline } from "react-icons/io5";
-import { BsSdCard } from "react-icons/bs";
-
-
+import { useEffect, useState } from "react";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { getStoredReadBooks } from "../utility/readLocalStorage";
+import Read from "../Read/Read";
 
 const ListedBooks = () => {
+    const [tabIndex, setTabIndex] = useState(0);
+
+    // const book = useLoaderData();
+    // const [appliedBooks, setAppliedBooks] = useState([]);
+    // const [displayBooks, setDisplayBooks] = useState([]);
+
+    // const books = useLoaderData();
+    // useEffect(() => {
+    //     const storedBookIds = getStoredReadBooks();
+    //     if (books.length > 0) {
+    //         const booksApplied = books.filter(book => storedBookIds.includes(book.id))
+    //         setAppliedBooks(booksApplied);
+    //         setDisplayBooks(booksApplied);
+    //         // console.log(books, storedBookIds, booksApplied);
+    //     }
+    // }, [books])
+
+
     return (
         <div>
-            <div classNameName='bg-[#131313]/5 h-28 rounded-xl my-8'>
-                <h2 classNameName='text-2xl text-center font-bold pt-8'>Books</h2>
+            <div className="bg-[#131313]/5 h-[100px] rounded-xl">
+                <h3 className="text-2xl font-bold text-center pt-8">Books</h3>
             </div>
-            <Tabs>
-                <TabList>
-                    <Tab>Read Books</Tab>
-                    <Tab>Wishlist Books</Tab>
-                </TabList>
-
-                <TabPanel>
-                    <div>
-                        <section>
-                            <div className="hero border-2 rounded-xl">
-                                <div className="hero-content flex-col lg:flex-row">
-                                    <img src="" className="max-w-sm rounded-lg shadow-2xl" />
-                                    <div>
-                                        <h1 className="playfair text-xl font-bold">World Cup Flags Football</h1>
-                                        <p className="py-2">By: </p>
-                                        <div className='lg:flex gap-4'>
-                                            <p className='font-bold'>Tag</p>
-                                            <div className='flex gap-1'>
-                                                <SlLocationPin className='mt-1'></SlLocationPin><span>Year of Publishing: 1924</span>
-                                            </div>
-                                        </div>
-                                        <div className="lg:flex gap-3">
-                                            <div className='flex gap-1'>
-                                                <IoPeopleOutline className='mt-1'></IoPeopleOutline><span>Publisher: Scribner</span>
-                                            </div>
-                                            <div className='flex gap-1'>
-                                                <BsSdCard className='mt-1'></BsSdCard><span>Page 192</span>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div className='flex gap-4'>
-                                            <button>1</button>
-                                            <button>1</button>
-                                            <button>1</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
-            </Tabs>
+            {/* tabs */}
+            <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 my-10">
+                <Link
+                    to=''
+                    onClick={() => setTabIndex(0)}
+                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-b-0' : 'border-b'} rounded-t-lg dark:border-gray-600 dark:text-gray-900`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Read Books</span>
+                    
+                </Link>
+                <Link
+                    to={`wish`}
+                    onClick={() => setTabIndex(1)}
+                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-b-0' : 'border-b'} rounded-t-lg dark:border-gray-600 dark:text-gray-900`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    <span>Wishlist Books</span>
+                </Link>
+            </div>
+            <Outlet></Outlet>
         </div>
     );
 };

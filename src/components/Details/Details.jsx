@@ -1,17 +1,31 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveReadBooks } from "../utility/readLocalStorage";
+
 
 const Details = () => {
     const books = useLoaderData();
     const { id } = useParams()
-    const book = books.find(book => book.id == id);
+    const idInt = parseInt(id)
+    const book = books.find(book => book.id === idInt);
     console.log(book);
+
+    const handleReadBooks = () =>{
+        saveReadBooks(idInt);
+        toast('Book added to read');
+    }
+    const handleWishLists = () =>{
+        toast('Book added to wishlist ')
+    }
+
     return (
 
         // <h3>show details</h3>
 
-        <div className="lg:grid grid-cols-2 gap-10 my-10">
+        <div className="lg:grid grid-cols-2 gap-10 my-10 lg:mx-0 mx-5">
             <div className="bg-[#131313]/5 rounded-xl lg:h-[630px]">
-                <img className="h-[450px] lg:mt-[90px] lg:ml-36" src={book.img} alt="" />
+                <img className="lg:h-[450px] lg:mt-[90px] lg:ml-36 ml-28" src={book.img} alt="" />
             </div>
             <div>
                 <h2 className="playfair text-4xl font-bold">{book.name}</h2>
@@ -24,7 +38,7 @@ const Details = () => {
                     <p className="flex gap-3"><span className="font-bold mt-1">Tag: </span>
                         {
                             book.tags.map(tag => (
-                                <p className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full ">{tag}</p>
+                                <p key={tag} className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full ">{tag}</p>
                             ))
                         }
                     </p>
@@ -47,10 +61,11 @@ const Details = () => {
                     </div>
                 </div>
                 <div>
-                    <button className="btn border-2 bg-none">Read</button>
-                    <button className="btn bg-[#59C6D2] text-white font-bold ml-5">Wishlist</button>
+                    <button onClick={handleReadBooks} className="btn border-2 bg-none">Read</button>
+                    <button onClick={handleWishLists} className="btn bg-[#59C6D2] text-white font-bold ml-5">Wishlist</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

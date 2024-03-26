@@ -15,7 +15,7 @@ const Book = ({ book }) => {
                 <div className=" mt-4 flex gap-4">
                     {
                         tags.map(tag => (
-                                <p className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full ">{tag}</p>
+                                <p key={tag} className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full ">{tag}</p>
                         ))
                     }
                 </div>
@@ -34,7 +34,7 @@ const Book = ({ book }) => {
 };
 
 Book.propTypes ={
-    name: PropTypes.object.isRequired
+    name: PropTypes.object
 }
 
 export default Book;
