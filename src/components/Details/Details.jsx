@@ -24,8 +24,15 @@ const Details = () => {
           }
     }
     const handleWishLists = () =>{
+        const isExist = books.find(book => book.id === idInt);
         saveWishList(idInt);
-        toast('Book added to wishlist ');
+        
+        if (!isExist) {
+            toast('Book added to wishlist ');
+          }
+          else{
+            toast('Book already added to Wish list')
+          }
     }
 
     return (
