@@ -1,8 +1,13 @@
-# React + Vite
+# Bookworm's Paradise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Bookworm's Paradise, where the love for books knows no bounds!
 
-Currently, two official plugins are available:
+**Live Site:** [bookwormsparadise.com](https://www.bookwormsparadise.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features and Characteristics:
+
+- **Book Catalog:** Browse through a vast catalog of books from various genres.
+- **Read/Wishlist Functionality:** Mark books as "Read" or add them to your "Wishlist" with just a click.
+- **Toast Notifications:** Receive instant feedback with toast notifications when adding books to your lists or attempting to add duplicates.
+- **User-Friendly Interface:** Intuitive interface designed for easy navigation and interaction.
+- **Responsive Design:** Enjoy seamless browsing experience across all devices, from desktops to smartphones.
