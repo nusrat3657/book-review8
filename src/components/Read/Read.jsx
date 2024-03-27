@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { SlLocationPin } from "react-icons/sl";
 import { IoPeopleOutline } from "react-icons/io5";
 import { BsSdCard } from "react-icons/bs";

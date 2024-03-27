@@ -13,8 +13,15 @@ const Details = () => {
     console.log(book);
 
     const handleReadBooks = () =>{
+        const isExist = books.find(book => book.id === idInt);
         saveReadBooks(idInt);
-        toast('Book added to read');
+        
+        if (!isExist) {
+            toast('Book added to Read List')
+          }
+          else{
+            toast('Book already added to Read list')
+          }
     }
     const handleWishLists = () =>{
         saveWishList(idInt);

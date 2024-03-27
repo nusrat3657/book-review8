@@ -1,34 +1,17 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
-import { getStoredReadBooks } from "../utility/readLocalStorage";
-import Read from "../Read/Read";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
-    const book = useLoaderData();
-    // const [appliedBooks, setAppliedBooks] = useState([]);
-    // const [displayBooks, setDisplayBooks] = useState([]);
-
-    // const books = useLoaderData();
-    // useEffect(() => {
-    //     const storedBookIds = getStoredReadBooks();
-    //     if (books.length > 0) {
-    //         const booksApplied = books.filter(book => storedBookIds.includes(book.id))
-    //         setAppliedBooks(booksApplied);
-    //         setDisplayBooks(booksApplied);
-    //         // console.log(books, storedBookIds, booksApplied);
-    //     }
-    // }, [books])
-
 
     return (
-        <div>
+        <div className="lg:px-0 px-3">
             <div className="bg-[#131313]/5 h-[100px] rounded-xl">
                 <h3 className="text-2xl font-bold text-center pt-8">Books</h3>
             </div>
             {/* tabs */}
-            <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 my-10">
+            <div className="flex items-center lg:-mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 my-10 ">
                 <Link
                     to=''
                     onClick={() => setTabIndex(0)}

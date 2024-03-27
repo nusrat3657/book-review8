@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredWishList } from "../utility/wishLocalStorage";
