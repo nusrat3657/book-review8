@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { NavLink } from "react-router-dom"
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost lg:text-2xl font-bold">Book Vibe</a>
+                <a className="btn btn-ghost lg:text-2xl font-bold">Bookworm's Paradise</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="mt-2 menu menu-horizontal px-1 ">

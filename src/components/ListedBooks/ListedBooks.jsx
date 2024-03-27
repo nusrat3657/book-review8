@@ -74,13 +74,13 @@ const ListedBooks = () => {
 
 
 
-                <ul>
+                {/* <ul>
                     {
                         appliedBooks.map(book => <li key={book.id}>
                             <span>{book.rating} {book.totalPages} {book.yearOfPublishing}</span>
                         </li>)
                     }
-                </ul>
+                </ul> */}
 
             </div>
             <Outlet></Outlet>
