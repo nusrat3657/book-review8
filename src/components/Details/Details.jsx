@@ -13,30 +13,6 @@ const Details = () => {
     const book = books.find(book => book.id === idInt);
     console.log(book);
 
-    // const handleReadBooks = () =>{
-    //     const isExist = books.find(book => book.id === idInt);
-        // saveReadBooks(idInt);
-        
-    //     if (!isExist) {
-    //         toast('Book added to Read List')
-    //       }
-    //       else{
-    //         toast('Book already added to Read list')
-    //       }
-    // }
-    // const handleWishLists = () =>{
-    //     const isExist = books.find(book => book.id === idInt);
-    //     saveWishList(idInt);
-        
-    //     if (!isExist) {
-    //         toast('Book added to wishlist ');
-    //       }
-    //       else{
-    //         toast('Book already added to Wish list')
-    //       }
-    // }
-
-
     const [readBooks, setReadBooks] = useState([]);
     const [wishlistBooks, setWishlistBooks] = useState([]);
   

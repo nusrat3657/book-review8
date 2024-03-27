@@ -11,7 +11,7 @@ const ListedBooks = () => {
 
     // const handleBooksFilter = sort
     // const data = [5,1,6,9,3];
-    console.log(displayBooks);
+    // console.log(displayBooks.totalPages);
     
 
     const handleBookSort = sort =>{
@@ -24,6 +24,14 @@ const ListedBooks = () => {
             // console.log(rating);
         }
     }
+
+
+    const idInt = parseInt(totalPages)
+    const book = books2.find(book => book.totalPages === idInt);
+    // console.log(book);
+    displayBooks.sort((a,b) =>{
+        return b.totalPages - a.totalPages;
+    })
 
     useEffect(() => {
         const storedBookIds = getStoredReadBooks();
