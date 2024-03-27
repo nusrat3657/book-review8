@@ -26,12 +26,9 @@ const ListedBooks = () => {
     }
 
 
-    const idInt = parseInt(totalPages)
-    const book = books2.find(book => book.totalPages === idInt);
-    // console.log(book);
-    displayBooks.sort((a,b) =>{
-        return b.totalPages - a.totalPages;
-    })
+    // displayBooks.sort((a,b) =>{
+    //     return b.totalPages - a.totalPages;
+    // })
 
     useEffect(() => {
         const storedBookIds = getStoredReadBooks();
