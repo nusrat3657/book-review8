@@ -14,6 +14,7 @@ import Contact from './components/Contact/Contact';
 import Details from './components/Details/Details';
 import Read from './components/Read/Read';
 import Wish from './components/Wish/Wish';
+import Review from './components/Review/Review';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         path: '/pages',
         element: <PagesToRead></PagesToRead>,
         loader: () => fetch('/BookInformation.json')
+      },
+      {
+        path: '/review',
+        element: <Review></Review>
       },
       {
         path: '/contact',

@@ -14,9 +14,9 @@ const Header = () => {
         <li><NavLink to="/pages" className={({ isActive }) =>
             isActive ? "font-bold text-[#23BE0A] border-2  rounded-lg border-[#23BE0A]" : ""
         }>Pages to Read</NavLink></li>
-        <li><NavLink to="/statistics" className={({ isActive }) =>
+        <li><NavLink to="/review" className={({ isActive }) =>
             isActive ? "font-bold text-[#23BE0A] border-2 rounded-lg border-[#23BE0A]" : ""
-        }>Statistics</NavLink></li>
+        }>Review</NavLink></li>
         <li><NavLink to="/contact" className={({ isActive }) =>
             isActive ? "font-bold text-[#23BE0A] border-2  rounded-lg border-[#23BE0A]" : ""
         }>Contact Us</NavLink></li>
