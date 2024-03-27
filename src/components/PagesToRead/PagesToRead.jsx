@@ -81,7 +81,7 @@ const TriangleBar = (props) => {
 export default function PagesToRead2() {
 
     const [appliedBooks, setAppliedBooks] = useState([]);
-    const [displayBooks, setDisplayBooks] = useState([]);
+    // const [displayBooks, setDisplayBooks] = useState([]);
 
     const books = useLoaderData();
     useEffect(() => {
@@ -89,34 +89,34 @@ export default function PagesToRead2() {
         if (books.length > 0) {
             const booksApplied = books.filter(book => storedBookIds.includes(book.id))
             setAppliedBooks(booksApplied);
-            setDisplayBooks(booksApplied);
-            console.log(storedBookIds, booksApplied);
+            // setDisplayBooks(booksApplied);
+            // console.log(storedBookIds, booksApplied);
         }
     }, [books])
 
     return (
-        <BarChart
-            width={600}
-            height={300}
-            data={appliedBooks}
-            margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                {appliedBooks.map((entry, i) => (
-                    <Cell key={`cell-${i}`} fill={colors[i % 20]} />
-                ))}
-            </Bar>
-        </BarChart>
-
-
+            <ResponsiveContainer height={400}>
+                <BarChart
+                    width={350}
+                    height={300}
+                    data={appliedBooks}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        // left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis angle={-45} dataKey="name" />
+                    <YAxis />
+                    <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                        {appliedBooks.map((entry, i) => (
+                            <Cell key={`cell-${i}`} fill={colors[i % 20]} />
+                        ))}
+                    </Bar>
+                </BarChart>
+            </ResponsiveContainer>
     );
 }
 

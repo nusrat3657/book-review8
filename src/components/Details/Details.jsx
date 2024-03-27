@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveReadBooks } from "../utility/readLocalStorage";
 import { saveWishList } from "../utility/wishLocalStorage";
+import { useState } from "react";
 
 
 const Details = () => {
@@ -12,28 +13,62 @@ const Details = () => {
     const book = books.find(book => book.id === idInt);
     console.log(book);
 
-    const handleReadBooks = () =>{
-        const isExist = books.find(book => book.id === idInt);
+    // const handleReadBooks = () =>{
+    //     const isExist = books.find(book => book.id === idInt);
+        // saveReadBooks(idInt);
+        
+    //     if (!isExist) {
+    //         toast('Book added to Read List')
+    //       }
+    //       else{
+    //         toast('Book already added to Read list')
+    //       }
+    // }
+    // const handleWishLists = () =>{
+    //     const isExist = books.find(book => book.id === idInt);
+    //     saveWishList(idInt);
+        
+    //     if (!isExist) {
+    //         toast('Book added to wishlist ');
+    //       }
+    //       else{
+    //         toast('Book already added to Wish list')
+    //       }
+    // }
+
+
+    const [readBooks, setReadBooks] = useState([]);
+    const [wishlistBooks, setWishlistBooks] = useState([]);
+  
+    const handleReadBooks = () => {
         saveReadBooks(idInt);
-        
-        if (!isExist) {
-            toast('Book added to Read List')
-          }
-          else{
-            toast('Book already added to Read list')
-          }
-    }
-    const handleWishLists = () =>{
-        const isExist = books.find(book => book.id === idInt);
+      if (readBooks.includes(book)) {
+        toast.error("This book is already marked as read!");
+      } 
+      else if (wishlistBooks.includes(book)) {
+        setReadBooks([...readBooks, book]);
+        toast.success(`Added "${book.name}" to your read list.`);
+      } 
+      else {
+        setReadBooks([...readBooks, book]);
+        toast.success(`Added "${book.name}" to your read list.`);
+      }
+    };
+  
+    const handleWishLists = () => {
         saveWishList(idInt);
-        
-        if (!isExist) {
-            toast('Book added to wishlist ');
-          }
-          else{
-            toast('Book already added to Wish list')
-          }
-    }
+      if (wishlistBooks.includes(book)) {
+        toast.error("This book is already in your wishlist!");
+      } 
+      else if (readBooks.includes(book)) {
+        toast.error("This book is already marked as read and cannot be added to your wishlist.");
+      } 
+      else {
+        setWishlistBooks([...wishlistBooks, book]);
+        toast.success(`Added "${book.name}" to your wishlist.`);
+      }
+    };
+
 
     return (
 
