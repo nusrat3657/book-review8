@@ -2,7 +2,7 @@
 
 Welcome to Bookworm's Paradise, where the love for books knows no bounds!
 
-**Live Site:** [bookwormsparadise.com](https://www.bookwormsparadise.com)
+**Live Site:** [bookwormsparadise.com]([https://www.bookwormsparadise.com](https://660442b3f96ac4144fe0e58e--aquamarine-cucurucho-2055b7.netlify.app/))
 
 ## Features and Characteristics:
 
