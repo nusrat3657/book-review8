@@ -65,7 +65,7 @@ const Details = () => {
                     <p className="flex gap-3"><span className="font-bold mt-1">Tag: </span>
                         {
                             book.tags.map(tag => (
-                                <p key={tag} className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full ">{tag}</p>
+                                <p key={tag} className="bg-[#23BE0A]/5 text-[#23BE0A] px-4 py-2 rounded-full font-bold">#{tag}</p>
                             ))
                         }
                     </p>

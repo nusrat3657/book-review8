@@ -13,7 +13,8 @@ const Books = () => {
 
     return (
         <div>
-            <h2 className="playfair text-4xl font-bold text-center  mt-20 mb-10">Books</h2>
+            <h2 className="playfair text-4xl font-bold text-center  mt-20 mb-5">Books</h2>
+            <p className="text-center lg:w-[620px] lg:ml-[300px] mb-10">Success and knowledge — Read Books Avidly, and Then Work Hard & Smart. Let the One Who Steals Steal No More. Reading books can make you successful. Step by step. Lack of burning desire.</p>
             <div className="lg:grid grid-cols-3 gap-5 mb-3">
             {
                 books.map(book => <Book key={book.id} book={book}></Book>)

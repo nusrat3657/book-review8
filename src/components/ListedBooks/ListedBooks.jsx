@@ -43,8 +43,9 @@ const ListedBooks = () => {
 
     return (
         <div className="lg:px-0 px-3">
-            <div className="bg-[#131313]/5 h-[100px] rounded-xl">
+            <div className="bg-[#131313]/5 lg:h-[200px] rounded-xl">
                 <h3 className="text-2xl font-bold text-center pt-8">Books</h3>
+                <p className="text-center lg:w-[620px] lg:ml-[330px] mt-3 mb-10 p-2">Success and knowledge — Read Books Avidly, and Then Work Hard & Smart. Let the One Who Steals Steal No More. Reading books can make you successful. Step by step. Lack of burning desire.</p>
             </div>
             <details className="dropdown mt-5 lg:ml-[585px]">
                 <summary className="m-1 bg-[#23BE0A] text-white btn">Sort By</summary>

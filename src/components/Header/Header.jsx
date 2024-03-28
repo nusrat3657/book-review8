@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
 
@@ -41,8 +41,8 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-[#23BE0A] border-2  text-white font-bold mr-4">Sign In</a>
-                <a className="btn bg-[#59C6D2] text-white font-bold">Sign up</a>
+                <Link to='/error'><a className="btn bg-[#23BE0A] border-2  text-white font-bold mr-4">Sign In</a></Link>
+                <Link to='/error'><a className="btn bg-[#59C6D2] text-white font-bold">Sign up</a></Link>
             </div>
         </div>
     );
